@@ -13,6 +13,10 @@ const transporter = nodemailer.createTransport({
 const app = express()
 app.use(cors())
 app.use(express.json())
+app.use(express.json())
+app.get("/",(req,res)=>{
+ res.json({"alert":"Email api"})
+})
  app.post("/email",(req,res)=>{
   const message = req.body.message;
   const name = req.body.name;
